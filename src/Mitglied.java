@@ -1,5 +1,4 @@
 public class Mitglied{
-    protected boolean istPremium; // True falls Premiummitglied
     protected String vorname;
     protected String nachname;
     protected int alter;
@@ -10,16 +9,18 @@ public class Mitglied{
         this.nachname = nachname;
         this.alter = alter;
         this.trainings = trainings;
-
     }
 
-    public boolean getPremium(){
-        return istPremium;
+    public String mitgliedinfos() {
+        String infos = "Name: " + vorname + " " + nachname + ", Alter: " + alter + "\nTrainingseinheiten: ";
+        for (Trainingseinheit training : trainings) {
+            if (training != null) {
+                infos += "Geraet: " + training.getGeraet() + ", Datum: " + training.getDatum() + ", Startzeit: " + training.getStartzeit().toString() + ", Endzeit: " + training.getEndzeit().toString() + ", Kalorienverbrauch: " + training.getKalorienverbrauch() + "\n";
+            }
+        }
+        return infos;
     }
 
-    public void setPremium(boolean istPremium){
-        this.istPremium = istPremium;
-    }
     public String getVorname(){
         return vorname;
     }

@@ -22,59 +22,11 @@ public class Main {
 
         mitglieder[0] = new Mitglied("Max", "Mustermann", 17, maxTrainings);
 
+        mitglieder[1] = new Premiummitglied("Erika", "Musterfrau", 25, erikaTrainings, "Wasser", 1, "Hans");
 
-        mitglieder[1] = new Mitglied("Erika", "Musterfrau", 30, erikaTrainings);
-        mitglieder[2] = new Mitglied("Hans", "Peter", 40, hansTrainings);
-        mitglieder[3] = new Mitglied("Klaus", "Müller", 50, klausTrainings);
-        mitglieder[4] = new Mitglied("Peter", "Schmidt", 16, maxTrainings);
+        System.out.println(mitglieder[0].mitgliedinfos());
+        System.out.println(mitglieder[1].mitgliedinfos());
 
-        mitglieder[0].setPremium(true);
-        mitglieder[1].setPremium(false);
-        mitglieder[2].setPremium(true);
-        mitglieder[3].setPremium(false);
-        mitglieder[4].setPremium(true);
-
-        System.out.println("\r\n");
-        System.out.println("Aufgabe 3A");
-        for (Mitglied mitglied : mitglieder) {
-            if (mitglied != null) {
-                if (mitglied.getAlter() > 18) {
-                    //Gebe Mitglieder in Konsole aus
-                    System.out.println(mitglied.getVorname() + " " + mitglied.getNachname() + " ist über 18 Jahre alt" + "  Alter: " + mitglied.getAlter());
-                }
-            }
-        }
-
-        System.out.println("\r\n");
-        System.out.println("Aufgabe 3B");
-        for (Mitglied mitglied : mitglieder) {
-            if (mitglied != null) {
-                if (mitglied.getPremium()) {
-                    //Gebe Mitglieder in Konsole aus
-                    System.out.println(mitglied.getVorname() + " " + mitglied.getNachname() + " ist Premiummitglied");
-                }
-            }
-        }
-
-        System.out.println("\r\n");
-        System.out.println("Aufgabe 3C");
-        for (Mitglied mitglied : mitglieder) {
-            if (mitglied != null) {
-                int avgCalorie = 0;
-                int counter = 0;
-                Trainingseinheit[] trainings = mitglied.getTrainings();
-                for (Trainingseinheit training : trainings) {
-                    if (training != null) {
-                        avgCalorie += training.getKalorienverbrauch();
-                        counter++;
-                    }
-                }
-                if (avgCalorie != 0) {
-                    avgCalorie = avgCalorie / counter;
-                    System.out.println(mitglied.getVorname() + " " + mitglied.getNachname() + " hat durchschnittlich " + avgCalorie + " Kalorien verbrannt");
-                }
-            }
-        }
     }
 
 }

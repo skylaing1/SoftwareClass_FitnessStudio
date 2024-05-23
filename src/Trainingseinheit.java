@@ -11,6 +11,8 @@ public class Trainingseinheit{
     public Trainingseinheit(LocalDate datum, LocalTime startzeit, LocalTime endzeit, String geraet, int kalorienverbrauch){
         this.datum = datum;
         this.geraet = geraet;
+        this.startzeit = startzeit;
+        this.endzeit = endzeit;
         this.kalorienverbrauch = kalorienverbrauch;
     }
 
